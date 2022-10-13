@@ -58,17 +58,9 @@ const HoMap = ({ geocode }: HoMapProps) => {
     map.fitBounds(bounds);
   };
 
-  // const { isLoaded } = useJsApiLoader({
-  //   googleMapsApiKey: process.env.NEXT_PUBLIC_API_KEY as string, //  API key
-  // });
-
-  // if (!isLoaded) {
-  //   return <div>Loading</div>;
-  // }
-
   return (
     <div className={Styles.container}>
-      <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_API_KEY as string}>
+      {window.google && (
         <GoogleMap
           onLoad={handleOnLoad}
           mapContainerStyle={{ width: "100%", height: "100%" }}
@@ -77,7 +69,7 @@ const HoMap = ({ geocode }: HoMapProps) => {
         >
           <Marker position={currentPosition ?? defaultCenter} />
         </GoogleMap>
-      </LoadScript>
+      )}
     </div>
   );
 };
