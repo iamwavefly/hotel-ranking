@@ -4,7 +4,7 @@
   position: relative;
   background-color: $color-white;
   height: auto;
-  min-height: 168px;
+  height: 180px;
   padding: 16px;
   border-radius: 10px;
   cursor: pointer;
@@ -43,8 +43,9 @@
   }
 }
 .content {
+  width: 100%;
   display: grid;
-  grid-template-rows: 20% 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
   row-gap: 8px;
   & > div {
     display: flex;
@@ -82,6 +83,7 @@
       text-align: right;
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: 16px;
       & > .type {
         color: $color-tertiary;
@@ -113,7 +115,7 @@
 @media screen and (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
-    min-height: max-content;
+    min-height: 300px;
   }
   .content {
     margin-top: 16px;
@@ -137,7 +139,7 @@
   }
   .price {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between !important;
     & > div {
       & > span {
         display: none;
