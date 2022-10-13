@@ -1,0 +1,11 @@
+.container {
+  min-height: 85vh;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: none;
+  }
+}
